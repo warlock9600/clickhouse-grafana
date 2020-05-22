@@ -19,7 +19,7 @@
   "editable": true,
   "gnetId": 882,
   "graphTooltip": 1,
-  "iteration": 1590148315632,
+  "iteration": 1590151576107,
   "links": [],
   "panels": [
     {
@@ -74,7 +74,7 @@
       ],
       "targets": [
         {
-          "expr": "ClickHouseAsyncMetrics_Uptime",
+          "expr": "ClickHouseAsyncMetrics_Uptime{namespace=~\"$namespace\",job=~\"$job\"}",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "{{job}}",
@@ -138,7 +138,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(ClickHouseProfileEvents_Query\r[1m])",
+          "expr": "rate(ClickHouseProfileEvents_Query\r{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -147,7 +147,7 @@
           "step": 10
         },
         {
-          "expr": "rate(ClickHouseProfileEvents_SelectQuery\r[1m])",
+          "expr": "rate(ClickHouseProfileEvents_SelectQuery\r{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -156,7 +156,7 @@
           "step": 10
         },
         {
-          "expr": "rate(ClickHouseProfileEvents_InsertQuery\r[1m])",
+          "expr": "rate(ClickHouseProfileEvents_InsertQuery\r{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -256,7 +256,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(ClickHouseProfileEvents_FileOpen\r[1m])",
+          "expr": "rate(ClickHouseProfileEvents_FileOpen\r{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -546,7 +546,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(ClickHouseProfileEvents_MergedRows[1m])",
+          "expr": "rate(ClickHouseProfileEvents_MergedRows{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -556,7 +556,7 @@
           "refId": "B"
         },
         {
-          "expr": "rate(ClickHouseProfileEvents_MergedUncompressedBytes[1m])",
+          "expr": "rate(ClickHouseProfileEvents_MergedUncompressedBytes{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -651,7 +651,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(ClickHouseProfileEvents_WriteBufferFromFileDescriptorWriteFailed\r[1m])",
+          "expr": "rate(ClickHouseProfileEvents_WriteBufferFromFileDescriptorWriteFailed\r{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -659,7 +659,7 @@
           "refId": "B"
         },
         {
-          "expr": "rate(ClickHouseProfileEvents_ReadBufferFromFileDescriptorReadFailed\r[1m])",
+          "expr": "rate(ClickHouseProfileEvents_ReadBufferFromFileDescriptorReadFailed{namespace=~\"$namespace\",job=~\"$job\"}\r[1m])",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -764,7 +764,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(ClickHouseProfileEvents_HardPageFaults[5m])",
+          "expr": "rate(ClickHouseProfileEvents_HardPageFaults{namespace=~\"$namespace\",job=~\"$job\"}[5m])",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -772,7 +772,7 @@
           "refId": "B"
         },
         {
-          "expr": "rate(ClickHouseProfileEvents_SoftPageFaults\r[1m])",
+          "expr": "rate(ClickHouseProfileEvents_SoftPageFaults\r{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -872,7 +872,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "ClickHouseAsyncMetrics_jemalloc_mapped\r",
+          "expr": "ClickHouseAsyncMetrics_jemalloc_mapped\r{namespace=~\"$namespace\",job=~\"$job\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -881,7 +881,7 @@
           "step": 10
         },
         {
-          "expr": "ClickHouseAsyncMetrics_jemalloc_resident\r",
+          "expr": "ClickHouseAsyncMetrics_jemalloc_resident\r{namespace=~\"$namespace\",job=~\"$job\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -890,7 +890,7 @@
           "step": 10
         },
         {
-          "expr": "ClickHouseAsyncMetrics_jemalloc_retained\r",
+          "expr": "ClickHouseAsyncMetrics_jemalloc_retained\r{namespace=~\"$namespace\",job=~\"$job\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -899,7 +899,7 @@
           "step": 10
         },
         {
-          "expr": "ClickHouseAsyncMetrics_jemalloc_active\r",
+          "expr": "ClickHouseAsyncMetrics_jemalloc_active\r{namespace=~\"$namespace\",job=~\"$job\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -908,7 +908,7 @@
           "step": 10
         },
         {
-          "expr": "ClickHouseAsyncMetrics_jemalloc_allocated\r",
+          "expr": "ClickHouseAsyncMetrics_jemalloc_allocated\r{namespace=~\"$namespace\",job=~\"$job\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -917,7 +917,7 @@
           "step": 10
         },
         {
-          "expr": "ClickHouseAsyncMetrics_jemalloc_metadata\r",
+          "expr": "ClickHouseAsyncMetrics_jemalloc_metadata\r{namespace=~\"$namespace\",job=~\"$job\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -1039,7 +1039,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "ClickHouseMetrics_TCPConnection",
+          "expr": "ClickHouseMetrics_TCPConnection{namespace=~\"$namespace\",job=~\"$job\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -1048,7 +1048,7 @@
           "step": 10
         },
         {
-          "expr": "ClickHouseMetrics_HTTPConnection",
+          "expr": "ClickHouseMetrics_HTTPConnection{namespace=~\"$namespace\",job=~\"$job\"}",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "http {{job}}",
@@ -1056,7 +1056,7 @@
           "step": 10
         },
         {
-          "expr": "ClickHouseMetrics_InterserverConnection",
+          "expr": "ClickHouseMetrics_InterserverConnection{namespace=~\"$namespace\",job=~\"$job\"}",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "interserver {{job}}",
@@ -1064,7 +1064,7 @@
           "step": 10
         },
         {
-          "expr": "ClickHouseMetrics_MySQLConnection",
+          "expr": "ClickHouseMetrics_MySQLConnection{namespace=~\"$namespace\",job=~\"$job\"}",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "mysql {{job}}",
@@ -1169,7 +1169,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(ClickHouseProfileEvents_CompressedReadBufferBytes[1m])",
+          "expr": "rate(ClickHouseProfileEvents_CompressedReadBufferBytes{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "{{job}}",
@@ -1177,7 +1177,7 @@
           "step": 10
         },
         {
-          "expr": "rate(ClickHouseProfileEvents_ReadCompressedBytes[1m])",
+          "expr": "rate(ClickHouseProfileEvents_ReadCompressedBytes{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "hide": true,
           "interval": "",
           "intervalFactor": 2,
@@ -1278,7 +1278,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(ClickHouseProfileEvents_ReadBufferFromFileDescriptorReadBytes\r[1m])",
+          "expr": "rate(ClickHouseProfileEvents_ReadBufferFromFileDescriptorReadBytes\r{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -1287,7 +1287,7 @@
           "refId": "B"
         },
         {
-          "expr": "rate(ClickHouseProfileEvents_ReadBufferFromFileDescriptorRead\r[1m])",
+          "expr": "rate(ClickHouseProfileEvents_ReadBufferFromFileDescriptorRead\r{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -1382,7 +1382,7 @@
       ],
       "targets": [
         {
-          "expr": "ClickHouseMetrics_VersionInteger",
+          "expr": "ClickHouseMetrics_VersionInteger{namespace=~\"$namespace\",job=~\"$job\"}",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "Version: {{job}}",
@@ -1391,7 +1391,7 @@
           "step": 60
         },
         {
-          "expr": "ClickHouseMetrics_Revision\r",
+          "expr": "ClickHouseMetrics_Revision\r{namespace=~\"$namespace\",job=~\"$job\"}",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "Revision {{job}}",
@@ -1466,7 +1466,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(ClickHouseProfileEvents_MarkCacheHits[1m]) / (rate(ClickHouseProfileEvents_MarkCacheHits[1m]) + rate(ClickHouseProfileEvents_MarkCacheMisses[1m]))",
+          "expr": "rate(ClickHouseProfileEvents_MarkCacheHits{namespace=~\"$namespace\",job=~\"$job\"}[1m]) / (rate(ClickHouseProfileEvents_MarkCacheHits{namespace=~\"$namespace\",job=~\"$job\"}[1m]) + rate(ClickHouseProfileEvents_MarkCacheMisses{namespace=~\"$namespace\",job=~\"$job\"}[1m]))",
           "hide": false,
           "interval": "",
           "intervalFactor": 2,
@@ -1569,7 +1569,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(ClickHouseProfileEvents_WriteBufferFromFileDescriptorWriteBytes\r[1m])",
+          "expr": "rate(ClickHouseProfileEvents_WriteBufferFromFileDescriptorWriteBytes\r{namespace=~\"$namespace\",job=~\"$job\"}[1m])",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -1578,7 +1578,7 @@
           "refId": "B"
         },
         {
-          "expr": "rate(ClickHouseProfileEvents_WriteBufferFromFileDescriptorWrite\r[1m])",
+          "expr": "rate(ClickHouseProfileEvents_WriteBufferFromFileDescriptorWrite{namespace=~\"$namespace\",job=~\"$job\"}\r[1m])",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -1636,7 +1636,64 @@
     "operator"
   ],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "text": "default",
+          "value": [
+            "default"
+          ]
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(ClickHouseAsyncMetrics_Uptime, namespace)",
+        "hide": 0,
+        "includeAll": true,
+        "index": -1,
+        "label": "Namespace",
+        "multi": true,
+        "name": "namespace",
+        "options": [],
+        "query": "label_values(ClickHouseAsyncMetrics_Uptime, namespace)",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "au-tsdb-clickhouse",
+          "value": [
+            "au-tsdb-clickhouse"
+          ]
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(ClickHouseAsyncMetrics_Uptime, job)",
+        "hide": 0,
+        "includeAll": true,
+        "index": -1,
+        "label": "Job",
+        "multi": true,
+        "name": "job",
+        "options": [],
+        "query": "label_values(ClickHouseAsyncMetrics_Uptime, job)",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
     "from": "now-30m",
